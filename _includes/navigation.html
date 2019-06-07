@@ -14,11 +14,14 @@
   if (x=="math/") {
 	  document.getElementById("current_location").innerHTML = "Math";
   }
-    if (x=="physics/") {
+    else if (x=="physics/") {
 	  document.getElementById("current_location").innerHTML = "Physics";
   }
-    if (x=="") {
+    else if (x=="") {
 	  document.getElementById("current_location").innerHTML = "Hi";
+  }
+  else{
+	  document.getElementById("current_location").innerHTML = document.title;
   }
 </script>
 </div>
