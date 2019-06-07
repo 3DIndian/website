@@ -1,5 +1,26 @@
-<nav>
+<style type="text/css">style.css</style>
+<div id="top" style="overflow:hidden;">
+<div id="menu_area" style="overflow:hidden;">
+<nav id="menu">
   {% for item in site.data.navigation %}
-    <a href="{{ item.link }}" {% if page.url == item.link %}class="current"{% endif %}>{{ item.name }}</a>
+    <a id="nav_text" href="{{ item.link }}" >  &nbsp {{ item.name }} &nbsp</a>
   {% endfor %}
 </nav>
+</div>
+<div id="current_location"> </div>
+<script>
+  var x = document.URL;
+  x= x.replace(/^(?:\/\/|[^\/]+)*\//, "");
+  if (x=="math/") {
+	  document.getElementById("current_location").innerHTML = "Math";
+  }
+    if (x=="physics/") {
+	  document.getElementById("current_location").innerHTML = "Physics";
+  }
+    if (x=="") {
+	  document.getElementById("current_location").innerHTML = "Hi";
+  }
+</script>
+</div>
+<!-- {% if page.url == item.link %}class="current"{% endif %} -->
+

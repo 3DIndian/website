@@ -1,3 +1,36 @@
-.current {
-  color: green;
+#top{
+	background-color: #9961c9;
+}
+
+#menu_area{
+	top:0;
+	left: 0;
+	width: 100%;
+}
+
+#menu{
+    float: right;
+margin-top: 40px;
+margin-right: 20px;
+margin-bottom: 0px;
+margin-left: 0px;
+}
+
+#nav_text{
+	color: white;
+	text-decoration: none;
+	font-size: 24px;
+}
+
+body { margin:0px; }
+
+#nav_text:hover {
+	color: #f0f0f0;
+}
+
+#current_location{
+	color: white;
+	text-align: center;
+	margin-top: 90px;
+	font-size: 64px;
 }
