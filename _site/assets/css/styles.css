@@ -29,3 +29,25 @@ body {
   text-align: center;
   margin-top: 90px;
   font-size: 64px; }
+
+#posts {
+  margin-left: 200px;
+  margin-right: 200px; }
+
+#posts #post_title {
+  text-decoration: none;
+  color: #333333;
+  font-size: 48px; }
+
+#read_more {
+  /*text-decoration: none;*/
+  color: #a0a0a0; }
+
+#post_author {
+  text-align: right;
+  font-size: 24px;
+  margin-right: 80px; }
+
+#post_content {
+  margin-left: 80px;
+  margin-right: 80px; }
