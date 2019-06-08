@@ -15,6 +15,7 @@ So, the solution of the oscillator $x$ will be of the form $x(T_0, T_1)$.
 Therefore, 
 
 $$\dot{x} = {\partial{x}\over \partial{T_0}} + \epsilon {\partial{x}\over \partial{T_1}} $$
+
 and 
 
 $$\ddot{x} = {\partial\over\partial{T_0}} \left({\partial{x}\over \partial{T_0}} + \epsilon {\partial{x}\over \partial{T_1}}\right) + \epsilon{\partial\over\partial{T_1}} \left({\partial{x}\over \partial{T_0}} + \epsilon {\partial{x}\over \partial{T_1}}\right) $$
@@ -46,17 +47,20 @@ $$  x_1+{\partial^2 x_1\over\partial{T_0}^2 }+\frac{1}{4}\left(8 P' \cos (Q+{T_0
 Since the solution should be bounded, we make the coefficient of $\cos(Q+T_0)$ and $\sin(Q+T_0)$ (called secular terms) $0$, otherwise the solution will blow up. Therefore, we obtain, 
 
 $$P^\prime = 0$$
+
 and 
+
 $$3P^3 - 8PQ^\prime = 0$$
 
 this gives
 
 $$P = C_1$$
+
 and 
 
-$$Q = {3\over 8} T_1 C_1^2 + C_2$$
+$$Q = {3\over 8} T_1 C_1^2 + C_2.$$
 
-now $T_1 = \epsilon T_0$ and $T_0 = t$, therefore, 
+Now $T_1 = \epsilon T_0$ and $T_0 = t$, therefore, 
 
 $$x_0 = P \sin\left(t + Q\right) = C_1\sin\left(t+ {3\over 8}\epsilon t C_1^2 + C_2 \right)$$ 
 
