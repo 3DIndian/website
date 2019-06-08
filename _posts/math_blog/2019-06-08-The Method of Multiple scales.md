@@ -63,6 +63,7 @@ $$x_0 = P \sin\left(t + Q\right) = C_1\sin\left(t+ {3\over 8}\epsilon t C_1^2 + 
 applying boundary conditions, 
 
 $$x(0) = 0 \Rightarrow C_1 \sin(C_2) = 0,$$
+
 $$\dot{x}(0) = 1 \Rightarrow C_1 \left(1 + {3\over 8}\epsilon C_1^2\right)\cos\left(t+ {3\over 8}\epsilon t C_1^2 + C_2 \right) =1$$
 
 we compare the leading order terms with leading order and $\epsilon$ order terms with itself, and obtain,
