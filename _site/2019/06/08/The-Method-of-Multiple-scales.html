@@ -45,14 +45,94 @@
     <div id="post_content"> <p>Consider the Duffing oscillator</p>
 
 <script type="math/tex; mode=display">\ddot{x} + x + \epsilon x^3 = 0</script>
+
+<p>with boundary conditions $x(0) = 0, \ \dot{x}(0) = 1$.</p>
+
+<p>To find an approximate analytical solution, we will use the method of multiple scales.
+Here $\epsilon$ is a small number $(«1)$ and the oscillator is normalized appropriately to get the above form.
+We start by defining two time steps $T_0 = t$ (the original time scale) and $T_1 = \epsilon t$ and treat them as independent variables.
+So, the solution of the oscillator $x$ will be of the form $x(T_0, T_1)$. 
+Therefore,</p>
+
+<script type="math/tex; mode=display">\dot{x} = {\partial{x}\over \partial{T_0}} + \epsilon {\partial{x}\over \partial{T_1}}</script>
+
+<p>and</p>
+
+<script type="math/tex; mode=display">\ddot{x} = {\partial\over\partial{T_0}} \left({\partial{x}\over \partial{T_0}} + \epsilon {\partial{x}\over \partial{T_1}}\right) + \epsilon{\partial\over\partial{T_1}} \left({\partial{x}\over \partial{T_0}} + \epsilon {\partial{x}\over \partial{T_1}}\right)</script>
+
+<p>we take only the terms till $O(\epsilon)$, hence</p>
+
+<script type="math/tex; mode=display">\ddot{x} = {\partial^2 x\over\partial{T_0}^2 } + 2 \epsilon {\partial^2{x}\over \partial{T_0 T_1}}</script>
+
+<p>Also, we expand $x$ as</p>
+
+<script type="math/tex; mode=display">x = x_0\left(T_0, T_1\right) + \epsilon x_1\left( T_0, T_1\right)</script>
+
+<p>substituting all of these in the original equation, we obtain</p>
+
+<script type="math/tex; mode=display">\epsilon  x_0^3+\epsilon  x_1+2 \epsilon  {\partial^2{x_0}\over \partial{T_0 T_1}}+\epsilon  {\partial^2 x_1\over\partial{T_0}^2 }+x_0+{\partial^2 x_0\over\partial{T_0}^2 } + O(\epsilon^2) = 0</script>
+
+<p>Now we make the leading order term $0$, giving us</p>
+
+<script type="math/tex; mode=display">x_0+{\partial^2 x_0\over\partial{T_0}^2 } = 0</script>
+
+<p>This gives</p>
+
+<script type="math/tex; mode=display">x_0\left( T_0, T_1\right) = P\left(T_1\right) \sin\left(T_0 + Q(T_1)\right)</script>
+
+<p>Now, we take $\epsilon$ order term and substitute the solution for $x_0$ and simplify to obtain,</p>
+
+<script type="math/tex; mode=display">x_1+{\partial^2 x_1\over\partial{T_0}^2 }+\frac{1}{4}\left(8 P' \cos (Q+{T_0})-8 P Q' \sin (Q+{T_0})+3 P^3 \sin (Q+{T_0})-P^3 \sin (3 Q+3 {T_0})\right) = 0</script>
+
+<p>Since the solution should be bounded, we make the coefficient of $\cos(Q+T_0)$ and $\sin(Q+T_0)$ (called secular terms) $0$, otherwise the solution will blow up. Therefore, we obtain,</p>
+
+<script type="math/tex; mode=display">P^\prime = 0</script>
+
+<p>and</p>
+
+<script type="math/tex; mode=display">3P^3 - 8PQ^\prime = 0</script>
+
+<p>this gives</p>
+
+<script type="math/tex; mode=display">P = C_1</script>
+
+<p>and</p>
+
+<script type="math/tex; mode=display">Q = {3\over 8} T_1 C_1^2 + C_2.</script>
+
+<p>Now $T_1 = \epsilon T_0$ and $T_0 = t$, therefore,</p>
+
+<script type="math/tex; mode=display">x_0 = P \sin\left(t + Q\right) = C_1\sin\left(t+ {3\over 8}\epsilon t C_1^2 + C_2 \right)</script>
+
+<p>applying boundary conditions,</p>
+
+<script type="math/tex; mode=display">x(0) = 0 \Rightarrow C_1 \sin(C_2) = 0,</script>
+
+<script type="math/tex; mode=display">\dot{x}(0) = 1 \Rightarrow C_1 \left(1 + {3\over 8}\epsilon C_1^2\right)\cos\left(t+ {3\over 8}\epsilon t C_1^2 + C_2 \right) =1</script>
+
+<p>we compare the leading order terms with leading order and $\epsilon$ order terms with itself, and obtain,</p>
+
+<script type="math/tex; mode=display">C_2 = 0, \ C_1 = 1</script>
+
+<p>Therefore the leading order solution will give,</p>
+
+<script type="math/tex; mode=display">x(t) = \sin\left({1+{3\over 8}\epsilon}\right)t</script>
  </div>
 <!-- <div id="post_author">
 Aakash Gupta
 </div>
  -->
-
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    processEscapes: true
+  }
+});
+</script>
  <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
+
   </body>
 </html>
