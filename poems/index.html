@@ -1,14 +1,14 @@
 ---
 layout: default
-title: Math
+title: Poems
 ---
 <div id="posts">
 <ul style="list-style: none">
   {% for post in site.posts %}
-    {% if post.path contains 'poem_blog' %}
+    {% if post.path contains 'poems_blog' %}
     <li style="margin-bottom: 40px">
       <h2><a id="post_title" href="{{ post.url }}">{{ post.title }}</a></h2>
-      <p>{{ post.content | truncatewords:50 }} <a id="read_more" href="{{post.url}}"> Read more</a></p>
+      <p>{{ post.content | truncatewords:30 }} <a id="read_more" href="{{post.url}}"> Read more</a></p>
     </li>
   {% endif %}
   {% endfor %}
