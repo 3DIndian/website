@@ -5,12 +5,14 @@ let temp_data = [];
 let flag = 1; // 1 for down, 2 for left, 3 for right
 let CREATE_NEW_ELEMENT = false;
 let previous_number_data = [2, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0];
-
+let img;
 let index_set =[];
 let color_data =  ['#CCC0B3', '#EEE4DA', '#EDE0C8', '#F2B179', '#F59563', '#F67C5F', '#F65E3B', '#EDCF72', '#EDCC61', '#EDC850', '#EDC53F', '#EDC22E'];
 function setup() {
   createCanvas(480, 520);
   gameSize = 480;
+  img = loadImage("https://3dindian.in/exp/2048beta/images/undo_button.PNG");
+
 }
 
 function draw(){
@@ -21,6 +23,8 @@ function draw(){
   // Undo button
   fill(0, 255, 0);
   rect(100, 485, 30, 30);
+  image(img, 100, 485, 30, 30);
+  
 
 
   let temp_val;
