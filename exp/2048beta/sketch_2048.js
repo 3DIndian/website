@@ -1,3 +1,16 @@
+var myElement = document.body;
+var swipeCode;
+var hammertime = new Hammer(myElement);
+hammertime.get('swipe').set({ direction: Hammer.DIRECTION_ALL });
+
+hammertime.on('swipe', function(ev) {
+  console.log(ev.offsetDirection);
+  swipeCode = ev.offsetDirection;
+  keyPressed();
+});
+
+
+
 let number_data = [2, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0];
 
 // From https://github.com/daniel-huang-1230/Game-2048/blob/master/Gui2048.java
@@ -6,12 +19,12 @@ let flag = 1; // 1 for down, 2 for left, 3 for right
 let CREATE_NEW_ELEMENT = false;
 let previous_number_data = [2, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0];
 let img;
+// img = loadImage("https://3dindian.in/exp/2048beta/images/undo_button.PNG");
 let index_set =[];
 let color_data =  ['#CCC0B3', '#EEE4DA', '#EDE0C8', '#F2B179', '#F59563', '#F67C5F', '#F65E3B', '#EDCF72', '#EDCC61', '#EDC850', '#EDC53F', '#EDC22E'];
 function setup() {
   createCanvas(480, 520);
   gameSize = 480;
-  img = loadImage("https://3dindian.in/exp/2048beta/images/undo_button.PNG");
 
 }
 
@@ -23,8 +36,8 @@ function draw(){
   // Undo button
   fill(0, 255, 0);
   rect(100, 485, 30, 30);
-  image(img, 100, 485, 30, 30);
-  
+  // image(img, 100, 485, 30, 30);
+
 
 
   let temp_val;
@@ -57,16 +70,19 @@ function mousePressed() {
 }
 
 function keyPressed() {
-    if (keyCode == UP_ARROW ||keyCode == DOWN_ARROW || keyCode ==LEFT_ARROW || keyCode ==RIGHT_ARROW) {
+  console.log(swipeCode)
+    if (keyCode == UP_ARROW ||keyCode == DOWN_ARROW || keyCode ==LEFT_ARROW || keyCode ==RIGHT_ARROW || swipeCode == 2 ||swipeCode == 4 || swipeCode == 8 || swipeCode ==16) {
+  console.log("Here 2")
+      
       let old_number_data = [];
              for (let i=0; i<16; i++) {
           old_number_data[i] = number_data[i];
         }
-      if (keyCode == DOWN_ARROW) {
+      if (keyCode == DOWN_ARROW || swipeCode == 16) {
         flag = 1;
-      } else if (keyCode == LEFT_ARROW) {
+      } else if (keyCode == LEFT_ARROW || swipeCode == 2) {
         flag = 2;
-      } else if (keyCode == RIGHT_ARROW) {
+      } else if (keyCode == RIGHT_ARROW || swipeCode == 4) {
         flag = 3;
       }
       if (flag==1) {
